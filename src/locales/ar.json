@@ -1,0 +1,14 @@
+{
+    "login": "تسجيل الدخول",
+    "hellowelcome":"مرحباً بكم!",
+  "email": "البريد الإلكتروني",
+  "enterEmail": "أدخل البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "enterPassword": "أدخل كلمة المرور",
+  "home": "الرئيسية",
+  "about": "حول",
+  "logout": "تسجيل الخروج",
+    "homePageTitle":"الصفحة الرئيسية",
+    "aboutPageTitle": "صفحة حول",
+    "selectLanguage":" اختر اللغة"
+  }

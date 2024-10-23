@@ -1,0 +1,15 @@
+ {
+    "login": "Login",
+    "hellowelcome":"Hello,Welcome!",
+  "email": "Email",
+  "enterEmail": "Enter email",
+  "password": "Password",
+  "enterPassword": "Enter password",
+   "home": "Home",
+  "about": "About",
+  "logout": "Logout",
+    "homePageTitle": "Home Page",
+    "aboutPageTitle":"About Page",
+    "selectLanguage": "Language"
+    
+  }
