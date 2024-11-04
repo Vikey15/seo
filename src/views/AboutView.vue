@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- <TopNav/> -->
     <SideMenu />
     <div class="p-4">
       <h1 class="text-3xl font-bold">{{ $t('aboutPageTitle') }}</h1>
@@ -10,11 +11,13 @@
 <script>
 import SideMenu from '../components/SideMenu.vue'
 import { useHead } from '@vueuse/head';
+import TopNav from '../components/TopNav.vue';
 
 export default {
   name: 'AboutView',
   components: {
-    SideMenu
+    SideMenu,
+    TopNav
   },
     setup() {
     // Use useHead to set the page title and meta tags

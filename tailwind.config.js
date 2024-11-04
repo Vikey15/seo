@@ -31,6 +31,8 @@ export default {
         button: {
           primary: '#FE3B4B',  // Bright red
           hover: '#D5323F', 
+          dark: '#660033', // Dark color
+          darkHover: '#800044', // Dark hover color
         },
       },
 

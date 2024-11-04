@@ -1,6 +1,6 @@
  {
     "login": "Login",
-    "hellowelcome":"Hello,Welcome!",
+    "hellowelcome":"Hello, Welcome!",
   "email": "Email",
   "enterEmail": "Enter email",
   "password": "Password",
@@ -10,6 +10,33 @@
   "logout": "Logout",
     "homePageTitle": "Home Page",
     "aboutPageTitle":"About Page",
-    "selectLanguage": "Language"
+    "selectLanguage": "Language",
+    "forgotPassword": "Forgot password?",
+    "rememberYourPassword": "Remember your password?",
+    "loginHere": "Login here",
+    "resetPassword": "Reset password",
+    "newPassword": "New Password",
+    "confirmNewPassword": "Confirm new password",
+    "enterNewPassword": "Enter a new password",
+    "resetMyPassword": "Reset my password",
+     "successfulPasswordReset": "Successful Password Reset!",
+    "useNewPasswordToLogin":"You can now use your new password to log in to your account!",
+    "error":"Error",
+    "warning":"Warning",
+    "success":"Success",
+    "info":"Info",
+    "incorrectCredentials":"Credentials are not valid",
+    "enterLoginCredentials":"Please enter your login credentials",
+    "enterValidEmail":"Please enter a valid email",
+    "enterValidPassword":"Please enter a valid password",
+    "passwordMismatch":"Password doesn't match",
+    "resetPasswordLinkSent":"Your reset password link has been sent to your registered email",
+    "emailVerification": "Email Verification",
+    "enterCode": "Enter the 4-digit verification code that was sent to your email",
+    "verify": "Verify",
+    "didntReceiveCode": "Didn't receive code?",
+    "resend": "Resend",
+    "enter4DigitCode": "Please enter the 4-digit code"
+
     
   }

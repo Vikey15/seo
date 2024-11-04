@@ -1,5 +1,4 @@
-import axios from "axios";
-
+import apiClient from "../../services/axios/axiosMiddleware";
 const state = {
     loginResponse: null,
   };
@@ -12,7 +11,7 @@ const state = {
   
   const actions = {
     async initiateLogin({ commit }, request) {
-      await axios.post('/ecommerce-api/bo/auth', request, {
+      await apiClient.post('/ecommerce-api/bo/auth', request, {
         headers: {
           "Content-Type": "text/plain",
         },

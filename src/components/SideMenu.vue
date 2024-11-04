@@ -1,27 +1,41 @@
 <template>
-  <div class="flex justify-between p-4 bg-primary-dark">
-    <div class="flex justify-center items-center">
+  <div class="p-4 bg-primary-dark space-y-6">
+    <div class="flex justify-center">
+      <img src="../assets/images/logo_white.png" alt="brandLogo" class="h-12 w-12"/>
+    </div>
+    <nav class="flex justify-center">
+      <div class="pl-3"><CustomFlagDropDown/></div>
+      <router-link to="/home" :id="SideMenuIds.navHome" class="flex items-center text-lg">{{ $t('home') }}</router-link>
+      <router-link to="/about" :id="SideMenuIds.navAbout" class="flex items-center text-lg">{{ $t('about') }}</router-link>
+      <p @click="initiateLogout" :id="SideMenuIds.navLogout" class="flex items-center cursor-pointer text-lg">{{ $t('logout') }}</p>     
+    </nav>
+  </div>
+
+  <!-- <div class="flex justify-between p-4 bg-primary-dark">
+    <div class="">
       <img src="../assets/images/logo_white.png" alt="brandLogo" class="h-12 w-12"/>
     </div>
     <nav class="flex justify-end">
-      <router-link to="/home" id="home" class="flex items-center text-lg">{{ $t('home') }}</router-link>
-      <router-link to="/about" id="about" class="flex items-center text-lg">{{ $t('about') }}</router-link>
-      <p @click="initiateLogout" id="logout" class="flex items-center cursor-pointer text-lg">{{ $t('logout') }}</p>
+      <router-link to="/home" :id="SideMenuIds.navHome" class="flex items-center text-lg">{{ $t('home') }}</router-link>
+      <router-link to="/about" :id="SideMenuIds.navAbout" class="flex items-center text-lg">{{ $t('about') }}</router-link>
+      <p @click="initiateLogout" :id="SideMenuIds.navLogout" class="flex items-center cursor-pointer text-lg">{{ $t('logout') }}</p>
       <CustomFlagDropDown/>
     </nav>
-  </div>
+  </div> -->
+
 </template>
 
 <script>
-import axios from 'axios';
 import { Icon } from '@iconify/vue';
 import CustomFlagDropDown from './CustomFlagDropDown.vue';
-
+import { SideMenuIds } from '../automationTestingIds';
+import apiClient from '../services/axios/axiosMiddleware';
 export default {
   name: 'SideMenu',
   data() {
     return {
-      selectedLanguage: this.$i18n.locale // Initialize with current locale
+      selectedLanguage: this.$i18n.locale, // Initialize with current locale
+      SideMenuIds
     };
   },
   components:{
@@ -33,8 +47,8 @@ export default {
       this.$i18n.locale = this.selectedLanguage;
     },
     async initiateLogout() {
-      axios
-        .post("/ecommerce-api/bo/userLogout", {
+      await 
+        apiClient.post("/ecommerce-api/bo/userLogout", {
           headers: {
             "Content-Type": "text/plain",
           },

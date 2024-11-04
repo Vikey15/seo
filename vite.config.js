@@ -1,12 +1,14 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+// const config = require('./webconfig');
 
+// console.log('VITE_SERVER:', process.env.VITE_SERVER);
 export default defineConfig({
   plugins: [vue()],
   server: {
     proxy: {
       '/ecommerce-api/bo': {
-        target: 'http://34.212.167.225:9000', 
+        target: 'http://35.161.224.241:9000', 
         changeOrigin: true, 
         rewrite: (path) => path.replace(/^\/ecommerce-api\/bo/, '/ecommerce-api/bo'), 
       },

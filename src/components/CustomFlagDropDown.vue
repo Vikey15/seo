@@ -1,7 +1,10 @@
 <template>
   <div class="relative inline-block text-left" ref="dropdown">
-    <button id="languageDropdown" @click="toggleDropdown"
-      class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-2 py-2 bg-white text-lg font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-dark"
+    <button :id="LanguageSwitch.langDropdown" @click="toggleDropdown"
+      class="inline-flex justify-center w-full rounded-md border
+       border-gray-300 shadow-sm px-2 py-1 bg-white text-lg 
+       font-semibold text-gray-700 hover:bg-gray-100
+        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-dark"
     >
       <span class="flex items-center">
         {{ selectedLanguageLabel }}
@@ -14,10 +17,10 @@
 
     <div v-if="isOpen" class="origin-top-right absolute mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 w-fit">
       <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-        <a href="#" id="languageEnglish" @click="selectLanguage('en')" class="flex items-center px-4 py-2 text-lg text-gray-700 hover:bg-gray-100">
+        <a href="#" :id="LanguageSwitch.engLanguage" @click="selectLanguage('en')" class="flex items-center justify-between px-4 py-2 text-lg text-gray-700 hover:bg-gray-100">
           English <Icon icon="twemoji:flag-us-outlying-islands" width="2em" height="2em" :class='this.selectedLanguage === "en"?"ml-2":"mr-2"' />
         </a>
-        <a href="#" id="languageArabic" @click="selectLanguage('ar')" class="flex items-center px-4 py-2 text-lg text-gray-700 hover:bg-gray-100">
+        <a href="#" :id="LanguageSwitch.arbLanguage" @click="selectLanguage('ar')" class="flex items-center justify-between px-4 py-2 text-lg text-gray-700 hover:bg-gray-100">
           عربي <Icon icon="twemoji:flag-qatar" width="2em" height="2em" :class='this.selectedLanguage === "en"?"ml-2":"mr-2"' />
         </a>
       </div>
@@ -27,12 +30,13 @@
 
 <script>
 import { Icon } from '@iconify/vue';
-
+import { LanguageSwitch } from '../automationTestingIds';
 export default {
   data() {
     return {
       isOpen: false,
       selectedLanguage: this.$i18n.locale, // Default selected language
+      LanguageSwitch
     };
   },
   components: {
