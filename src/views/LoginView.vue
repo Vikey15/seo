@@ -150,7 +150,7 @@ export default {
       // and one special character from the specified set.
     },
     async verifyLogin() {
-      this.$router.replace({ name: 'home' });
+      
       const verifyEmail = this.isValidEmail(this.email)
       const verifyPassword = this.isValidPassword(this.password)
       console.log(verifyEmail, verifyPassword, "verifyEmail", "verifyPassword")
@@ -199,20 +199,21 @@ export default {
           }
         }
         const response = await this.initiateLogin(request);
-        if (response.header.responseCode === LOGIN_RESPONSE_SUCCESS_CODE) {
-          // document.cookie = `sessionToken=${response.data.token}; path=/; SameSite=Strict;`;
-          this.$router.replace({ name: 'home' });
-        }
-        else{
-          this.alertvisibility = true,
-          this.alertMessage = this.$t('error');
-          this.alertDescription = this.$t('incorrectCredentials');
-          this.alertSeverity = "error",
-          setTimeout(() => {
-            this.alertvisibility = false;
-          }, 2000);
-        console.log("credentials are not valid")
-        }
+        this.$router.replace({ name: 'home' });
+        // if (response.header.responseCode === LOGIN_RESPONSE_SUCCESS_CODE) {
+        //   // document.cookie = `sessionToken=${response.data.token}; path=/; SameSite=Strict;`;
+        //   this.$router.replace({ name: 'home' });
+        // }
+        // else{
+        //   this.alertvisibility = true,
+        //   this.alertMessage = this.$t('error');
+        //   this.alertDescription = this.$t('incorrectCredentials');
+        //   this.alertSeverity = "error",
+        //   setTimeout(() => {
+        //     this.alertvisibility = false;
+        //   }, 2000);
+        // console.log("credentials are not valid")
+        // }
       }
 
     },
