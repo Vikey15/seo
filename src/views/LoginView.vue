@@ -164,16 +164,16 @@ export default {
             this.alertvisibility = false;
           }, 2000);
     }
-    else if(!verifyPassword)
-    {
-      this.alertvisibility = true,
-          this.alertMessage = this.$t('error');
-          this.alertDescription = this.$t('enterValidPassword');
-          this.alertSeverity = "error",
-          setTimeout(() => {
-            this.alertvisibility = false;
-          }, 2000);
-    }
+    // else if(!verifyPassword)
+    // {
+    //   this.alertvisibility = true,
+    //       this.alertMessage = this.$t('error');
+    //       this.alertDescription = this.$t('enterValidPassword');
+    //       this.alertSeverity = "error",
+    //       setTimeout(() => {
+    //         this.alertvisibility = false;
+    //       }, 2000);
+    // }
       else if (verifyEmail ) {
         const request = {
           "request": {
