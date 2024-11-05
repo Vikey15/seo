@@ -1,4 +1,4 @@
-import { createRouter, createMemoryHistory, createWebHistory } from 'vue-router';
+import { createRouter, createMemoryHistory, createWebHashHistory } from 'vue-router';
 
 const isServer = typeof window === 'undefined';
 
@@ -42,7 +42,7 @@ export const routes = [
 
 const router = createRouter({
   // Use createMemoryHistory for SSR, and createWebHistory for the browser
-  history: isServer ? createMemoryHistory() : createWebHistory(),
+  history: isServer ? createMemoryHistory() : createWebHashHistory(),
   routes,
 });
 

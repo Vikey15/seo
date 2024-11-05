@@ -7,10 +7,7 @@
       <div class="pl-3"><CustomFlagDropDown/></div>
       <router-link to="/home" :id="SideMenuIds.navHome" class="flex items-center text-lg">{{ $t('home') }}</router-link>
       <router-link to="/about" :id="SideMenuIds.navAbout" class="flex items-center text-lg">{{ $t('about') }}</router-link>
-      <p @click="initiateLogout" :id="SideMenuIds.navLogout" class="flex items-center cursor-pointer text-lg">{{ $t('logout') }}</p> 
-      <p  @click="this.$router.replace({ name: 'otpVerification' });">Otp Page</p>    
-      <p  @click="this.$router.replace({ name: 'passwordReset' });">Password Reset Page</p>    
-      <p  @click="this.$router.replace({ name: 'passwordResetSuccess' });">Password Reset Success Page</p>    
+      <p @click="initiateLogout" :id="SideMenuIds.navLogout" class="flex items-center cursor-pointer text-lg">{{ $t('logout') }}</p>     
     </nav>
   </div>
 
