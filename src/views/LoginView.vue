@@ -174,7 +174,7 @@ export default {
             this.alertvisibility = false;
           }, 2000);
     }
-      else if (verifyEmail && verifyPassword) {
+      else if (verifyEmail ) {
         const request = {
           "request": {
             "envelope": {
