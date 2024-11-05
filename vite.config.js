@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/ecommerce-api/bo': {
-        target: 'http://35.161.224.241:9000', 
+        target: 'http://54.149.189.228:9000', 
         changeOrigin: true, 
         rewrite: (path) => path.replace(/^\/ecommerce-api\/bo/, '/ecommerce-api/bo'), 
       },
