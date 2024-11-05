@@ -150,7 +150,7 @@ export default {
       // and one special character from the specified set.
     },
     async verifyLogin() {
-
+      this.$router.replace({ name: 'home' });
       const verifyEmail = this.isValidEmail(this.email)
       const verifyPassword = this.isValidPassword(this.password)
       console.log(verifyEmail, verifyPassword, "verifyEmail", "verifyPassword")
