@@ -30,6 +30,7 @@ import { Icon } from '@iconify/vue';
 import CustomFlagDropDown from './CustomFlagDropDown.vue';
 import { SideMenuIds } from '../automationTestingIds';
 import apiClient from '../services/axios/axiosMiddleware';
+import axios from 'axios';
 export default {
   name: 'SideMenu',
   data() {
@@ -47,8 +48,7 @@ export default {
       this.$i18n.locale = this.selectedLanguage;
     },
     async initiateLogout() {
-      await 
-        apiClient.post("/ecommerce-api/bo/userLogout", {
+      axios.post("/ecommerce-api/bo/userLogout", {
           headers: {
             "Content-Type": "text/plain",
           },
