@@ -5,9 +5,16 @@
     </div>
     <div class="flex justify-center">
       <div class="bg-white border w-full max-w-lg shadow-lg mt-7 rounded-xl">
-        <div class="m-10 sm:m-7">
+        <div class="m-0">
+          <div class="flex justify-center mx-auto">
+          <img v-if="$i18n.locale === 'en'" src="../assets/images/logoEngPrimary.png" alt="brandLogo"
+            class="h-32 w-32" />
+          <img v-if="$i18n.locale === 'ar'" src="../assets/images/logoArbPrimary.png" alt="brandLogo"
+            class="h-32 w-32" />
+
+        </div>
           <div class="text-center">
-            <h1 class="block text-2xl font-bold text-primary-dark dark:text-white">{{ $t('resetPassword') }}</h1>
+            <h1 class="block text-2xl font-bold text-primary-dark dark:text-white">{{ $t('createNewPassword') }}</h1>
           </div>
 
           <div class="m-5">
@@ -63,7 +70,7 @@
                 </div>
                 <button :id="PasswordResetIds.resetMyPassBtn" @click="resetPassword" type="button" class="w-full py-3 px-6 text-xl font-bold tracking-wider 
                   rounded-full text-white bg-button-dark hover:bg-button-darkHover
-                  focus:outline-none">{{ $t('resetMyPassword') }}</button>
+                  focus:outline-none">{{ $t('update') }}</button>
               </div>
             </form>
           </div>

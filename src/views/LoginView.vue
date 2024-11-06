@@ -16,7 +16,7 @@
         </div>
 
         <div class="mx-auto flex justify-center">
-          <h3 class="text-primary-dark text-5xl font-extrabold"> {{ $t('hellowelcome') }}</h3>
+          <h3 class=" text-gray-600 dark:text-gray-400 text-lg "> {{ $t('enterUsernameAndPass') }}</h3>
         </div>
         <div class="mx-8 mt-3">
           <label class="text-gray-800 text-lg block">{{ $t('email') }}</label>
@@ -69,7 +69,12 @@
           </div>
         </div>
 
-        <div :class="[this.$i18n.locale === 'ar' ? 'ml-7' : 'mr-7', 'flex', 'justify-end','items-center','mt-2']">
+        <div :class="[ 'flex', 'justify-around','items-center','mt-2']">
+          <div class="flex justify-between">
+            <input type="checkbox" class="accent-primary-dark" v-model="isChecked"/>
+            <label class="text-gray-800 text-lg block ml-2"
+            @click="isChecked = !isChecked"> {{ $t('rememberMe') }}</label>
+          </div>
           <label class="text-gray-800 hover:underline decoration-2 text-lg block cursor-pointer"
             @click="this.$router.replace({ name: 'forgotPassword' });"> {{ $t('forgotPassword') }}</label>
         </div>
@@ -95,6 +100,7 @@ import { Icon } from '@iconify/vue';
 import CustomFlagDropDown from '../components/CustomFlagDropDown.vue';
 import AlertModal from '../components/modals/AlertModal.vue';
 import { LOGIN_RESPONSE_SUCCESS_CODE } from '../constants';
+import { vModelCheckbox } from 'vue';
 export default {
   name: "LoginView",
   data() {
@@ -102,6 +108,7 @@ export default {
       email: "",
       password: "",
       passwordVisibility: false,
+      isChecked: false,
       selectedLanguage: this.$i18n.locale, // Initialize with current locale
       LoginPageIds,
       alertvisibility: false,

@@ -7,6 +7,14 @@
       <div class="pl-3"><CustomFlagDropDown/></div>
       <router-link to="/home" :id="SideMenuIds.navHome" class="flex items-center text-lg">{{ $t('home') }}</router-link>
       <router-link to="/about" :id="SideMenuIds.navAbout" class="flex items-center text-lg">{{ $t('about') }}</router-link>
+      
+      <!-- <router-link to="/store" :id="SideMenuIds.navStore" class="flex items-center text-lg">{{ $t('store') }}</router-link>
+      <router-link to="/explore" :id="SideMenuIds.navExplore" class="flex items-center text-lg">{{ $t('explore') }}</router-link>
+      <router-link to="/orders" :id="SideMenuIds.navOrders" class="flex items-center text-lg">{{ $t('orders') }}</router-link>
+      <router-link to="/lists" :id="SideMenuIds.navLists" class="flex items-center text-lg">{{ $t('lists') }}</router-link>
+      <router-link to="/dashboard" :id="SideMenuIds.navDashboard" class="flex items-center text-lg">{{ $t('dashboard') }}</router-link>
+      <router-link to="/myPage" :id="SideMenuIds.navMyPage" class="flex items-center text-lg">{{ $t('myPage') }}</router-link>
+       -->
       <p @click="initiateLogout" :id="SideMenuIds.navLogout" class="flex items-center cursor-pointer text-lg">{{ $t('logout') }}</p>     
     </nav>
   </div>

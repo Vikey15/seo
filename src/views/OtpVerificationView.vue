@@ -4,11 +4,19 @@
       <CustomFlagDropDown />
     </div>
       <div class="flex justify-center">
-        <div class="max-w-md mx-auto text-center bg-white px-4 sm:px-8 py-10 rounded-xl shadow">
-          <header class="mb-8">
+        <div class="max-w-md mx-auto text-center bg-white px-4 sm:px-8 py-4 rounded-xl shadow-lg dark:bg-gray-800 dark:border-gray-700 border-2">
+          <header>
+            <div class="flex justify-center mx-auto">
+          <img v-if="$i18n.locale === 'en'" src="../assets/images/logoEngPrimary.png" alt="brandLogo"
+            class="h-32 w-32" />
+          <img v-if="$i18n.locale === 'ar'" src="../assets/images/logoArbPrimary.png" alt="brandLogo"
+            class="h-32 w-32" />
+
+        </div>
             <h1 class="block text-2xl font-bold text-primary-dark dark:text-white">{{ $t('emailVerification') }}</h1>
             <p class="flex justify-center m-2 text-lg text-gray-600 dark:text-gray-400">{{ $t('enterCode') }}</p>
           </header>
+          <p class="text-center my-5 font-semibold text-xl">e...e@domain.com</p>
           <form @submit.prevent="handleSubmit" ref="otpForm">
             <div class="flex items-center justify-center gap-3">
               <input
@@ -26,6 +34,11 @@
                 ref="otpInputs"
               />
             </div>
+            <p class="flex justify-center m-2 text-lg text-gray-600 dark:text-gray-400">
+            {{ $t('didntReceiveCode') }} 
+            <a class="mx-2 text-primary-dark decoration-2 hover:underline font-medium">
+                {{ $t('resend') }}</a>
+          </p>
             <div class="max-w-[260px] mx-auto mt-4">
               <button ref="submitButton" type="submit" :id="OtpVerificationIds.otpVerifyBtn"
                       class="w-full py-3 px-6 text-xl font-bold tracking-wider 
@@ -35,11 +48,7 @@
               </button>
             </div>
           </form>
-          <p class="flex justify-center m-2 text-lg text-gray-600 dark:text-gray-400">
-            {{ $t('didntReceiveCode') }} 
-            <a class="mx-2 text-primary-dark decoration-2 hover:underline font-medium" href="#">
-                {{ $t('resend') }}</a>
-          </p>
+         
         </div>
       </div>
      

@@ -15,7 +15,13 @@ export const LoginPageIds={
 export const SideMenuIds={
     navHome:"nav-home",
     navAbout:"nav-about",
-    navLogout:"nav-logout"
+    navLogout:"nav-logout",
+    navStore:"nav-store",
+    navExplore:"nav-explore",
+    navOrders:"nav-orders",
+    navLists:"nav-lists",
+    navDashboard:"nav-dashboard",
+    navMyPage:"nav-myPage",
 }
 
 export const ForgotPasswordIds={

@@ -15,12 +15,12 @@
       </svg>
     </button>
 
-    <div v-if="isOpen" class="origin-top-right absolute mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 w-fit">
+    <div v-if="isOpen" class="origin-top-right absolute mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 w-fit z-50">
       <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-        <a href="#" :id="LanguageSwitch.engLanguage" @click="selectLanguage('en')" class="flex items-center justify-between px-4 py-2 text-lg text-gray-700 hover:bg-gray-100">
+        <a :id="LanguageSwitch.engLanguage" @click="selectLanguage('en')" class="flex items-center justify-between px-4 py-2 text-lg text-gray-700 hover:bg-gray-100">
           English <Icon icon="twemoji:flag-us-outlying-islands" width="2em" height="2em" :class='this.selectedLanguage === "en"?"ml-2":"mr-2"' />
         </a>
-        <a href="#" :id="LanguageSwitch.arbLanguage" @click="selectLanguage('ar')" class="flex items-center justify-between px-4 py-2 text-lg text-gray-700 hover:bg-gray-100">
+        <a :id="LanguageSwitch.arbLanguage" @click="selectLanguage('ar')" class="flex items-center justify-between px-4 py-2 text-lg text-gray-700 hover:bg-gray-100">
           عربي <Icon icon="twemoji:flag-qatar" width="2em" height="2em" :class='this.selectedLanguage === "en"?"ml-2":"mr-2"' />
         </a>
       </div>

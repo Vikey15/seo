@@ -7,8 +7,18 @@
     <div class="flex justify-center">
     <div class="mt-7 bg-white rounded-xl shadow-lg dark:bg-gray-800 dark:border-gray-700 border-2">
       <div class="p-4 sm:p-7">
+        <div class="flex justify-center mx-auto">
+          <img v-if="$i18n.locale === 'en'" src="../assets/images/logoEngPrimary.png" alt="brandLogo"
+            class="h-32 w-32" />
+          <img v-if="$i18n.locale === 'ar'" src="../assets/images/logoArbPrimary.png" alt="brandLogo"
+            class="h-32 w-32" />
+
+        </div>
         <div class="text-center">
-          <h1 class="block text-2xl font-bold text-primary-dark dark:text-white">{{ $t('forgotPassword') }}</h1>
+          
+          <h1 class="block text-2xl font-bold text-primary-dark dark:text-white">{{ $t('resetPassword') }}</h1>
+          <p class="flex justify-center m-2 text-lg text-gray-600 dark:text-gray-400">
+            {{ $t('emailSentText') }}</p>
           
         </div>
 
@@ -54,7 +64,7 @@
                   :id="ForgotPasswordIds.resetPassBtn" class="w-full py-3 px-6 text-xl font-bold tracking-wider 
                   rounded-full text-white bg-button-dark hover:bg-button-darkHover
                   focus:outline-none">
-                  {{ $t('resetPassword') }}
+                  {{ $t('continue') }}
                 </button>
             </div>
           </form>
@@ -92,6 +102,11 @@ export default{
   components:{
     CustomFlagDropDown,
     AlertModal
+  },
+  computed: {
+    rtlClass() {
+      return this.$i18n.locale === 'ar' ? 'rtl' : 'ltr'
+    },
   },
   methods:{
     isValidEmail(email) {

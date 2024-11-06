@@ -2,7 +2,7 @@
     <transition name="fade">
         <div v-if="show"
             :class="[backgroundClass, 'border-t-4 rounded-b px-4 py-3 shadow-md fixed top-4 right-4 z-50']"
-            role="alert">
+            role="alert" style="margin: 0px;">
             <div class="flex items-center justify-between space-x-2" :style="{ direction: 'ltr' }">
                 <div >
                     <Icon :icon="iconName" width="2em" height="2em" />
