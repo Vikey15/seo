@@ -48,7 +48,10 @@
     "orders": "الطلبات",
     "lists": "القوائم",
     "dashboard": "لوحة التحكم",
-    "myPage": "صفحتي"
+    "myPage": "صفحتي",
+    "goodMorning": "صباح الخير",
+    "goodAfternoon": "مساء الخير",
+    "goodEvening": "مساء الخير"
 
 
   }

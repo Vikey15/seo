@@ -38,6 +38,11 @@ export const routes = [
     name: 'otpVerification',
     component: () => import('./views/OtpVerificationView.vue'), // Lazy loading
   },
+  {
+    path: '/products',
+    name: 'products',
+    component: () => import('./views/ProductView.vue'), // Lazy loading
+  },
 ];
 
 const router = createRouter({

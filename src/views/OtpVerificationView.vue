@@ -79,17 +79,18 @@ import { OtpVerificationIds } from '../automationTestingIds';
     methods: {
       handleSubmit() {
         console.log('OTP Submitted:', this.otpInputs.join(''));
-        if(this.otpInputs.join('') < 1000)
-      {
-        this.alertvisibility = true,
-          this.alertMessage = this.$t('error');
-          this.alertDescription = this.$t('enter4DigitCode');
-          this.alertSeverity = "error",
-          setTimeout(() => {
-            this.alertvisibility = false;
-          }, 2000);
-      }
-        
+        this.$router.replace({ name: 'passwordReset' }) //For testing
+      //   if(this.otpInputs.join('') < 1000)
+      // {
+      //   this.alertvisibility = true,
+      //     this.alertMessage = this.$t('error');
+      //     this.alertDescription = this.$t('enter4DigitCode');
+      //     this.alertSeverity = "error",
+      //     setTimeout(() => {
+      //       this.alertvisibility = false;
+      //     }, 2000);
+      // }
+      
       },
       handleInput(index) {
         // Move to the next input if the current input has a value

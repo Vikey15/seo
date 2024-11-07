@@ -1,89 +1,37 @@
 <template>
-    <div :class="['topnav', { responsive: isResponsive }]" id="myTopnav">
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      
-      <a href="javascript:void(0);" class="icon" @click="toggleMenu">
-        <Icon icon='twemoji:flag-us-outlying-islands' width="2em" height="2em"  />
-      </a>
+    <div class="p-2 mt-2 flex bg-white rounded-3xl mx-3">
+      <button 
+        @click="toggleSideMenu" 
+        type="button" 
+        class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" 
+        aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+      </button>
     </div>
-  </template>
-  
-  <script>
-  import { Icon } from '@iconify/vue';
+</template>
 
-  export default {
-    name: 'TopNav',
-    data() {
-      return {
-        isResponsive: false,
-      };
+<script>
+import { mapActions } from 'vuex';
+
+export default {
+  name: 'TopNav',
+  data() {
+    return {
+      isSideMenuActive: false,
+    };
+  },
+  methods: {
+    toggleSideMenu() {
+      this.isSideMenuActive = !this.isSideMenuActive;
+      this.$emit('sideMenu-visibility', this.isSideMenuActive);
     },
-    methods: {
-      toggleMenu() {
-        this.isResponsive = !this.isResponsive;
-      },
-    },
-    components:{
-        Icon
-    }
-  };
-  </script>
-  
-  <style scoped>
-  .topnav {
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .topnav a.active {
-    background-color: #04AA6D;
-    color: white;
-  }
-  
-  .topnav .icon {
-    display: none;
-  }
-  
-  @media screen and (max-width: 600px) {
-    .topnav a:not(:first-child) {
-      display: none;
-    }
-    .topnav a.icon {
-      float: right;
-      display: block;
-    }
-  }
-  
-  @media screen and (max-width: 600px) {
-    .topnav.responsive {
-      position: relative;
-    }
-    .topnav.responsive .icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .topnav.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-  }
-  </style>
-  
+  },
+};
+</script>
+
+<style>
+/* Add any additional styles if needed */
+</style>

@@ -127,6 +127,7 @@ export default {
     },
 
     async resetPassword() {
+      this.$router.replace({ name: 'passwordResetSuccess' }) //For testing
       const verifyPassword = this.isValidPassword(this.password)
       const verifyConfirmPassword = this.isValidPassword(this.confirmPassword)
 

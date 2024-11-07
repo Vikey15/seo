@@ -114,6 +114,7 @@ export default{
       return regex.test(email);
     },
     async resetPassword(){
+      
       const verifyEmail = this.isValidEmail(this.email)
       if(verifyEmail)
     {
@@ -147,15 +148,15 @@ export default{
       });
     }
     else{
-      
-      console.log(verifyEmail,'verifymail')
-      this.alertvisibility = true,
-          this.alertMessage = this.$t('error');
-          this.alertDescription = this.$t('enterValidEmail');
-          this.alertSeverity = "error",
-          setTimeout(() => {
-            this.alertvisibility = false;
-          }, 2000);
+      this.$router.replace({ name: 'otpVerification' }) //For testing
+      // console.log(verifyEmail,'verifymail')
+      // this.alertvisibility = true,
+      //     this.alertMessage = this.$t('error');
+      //     this.alertDescription = this.$t('enterValidEmail');
+      //     this.alertSeverity = "error",
+      //     setTimeout(() => {
+      //       this.alertvisibility = false;
+      //     }, 2000);
     }
     }
   }

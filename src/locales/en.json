@@ -48,7 +48,10 @@
     "orders": "Orders",
     "lists": "Lists",
     "dashboard": "Dashboard",
-    "myPage": "My Page"
+    "myPage": "My Page",
+    "goodMorning": "Good Morning",
+    "goodAfternoon": "Good Afternoon",
+    "goodEvening": "Good Evening"
 
 
     

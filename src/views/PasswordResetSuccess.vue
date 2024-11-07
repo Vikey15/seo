@@ -8,6 +8,10 @@
       <div class="py-12 bg-white border shadow-lg mt-7 rounded-3xl">
         <div class="p-4 sm:p-7">
           <div class="text-center">
+            <div class="flex justify-center items-center">
+              <img src="../assets/images/passwordUpdated.svg"/>
+            </div>
+            
             <h1 class="block text-2xl font-bold text-primary-dark dark:text-white">{{ $t('successfulPasswordReset') }}
             </h1>
             <p class=" text-gray-600 dark:text-gray-400 text-lg block m-12 sm:m-10">{{ $t('useNewPasswordToLogin') }}

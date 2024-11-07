@@ -206,7 +206,7 @@ export default {
           }
         }
         const response = await this.initiateLogin(request);
-        this.$router.replace({ name: 'home' });
+        this.$router.replace({ name: 'products' });
         // if (response.header.responseCode === LOGIN_RESPONSE_SUCCESS_CODE) {
         //   // document.cookie = `sessionToken=${response.data.token}; path=/; SameSite=Strict;`;
         //   this.$router.replace({ name: 'home' });
