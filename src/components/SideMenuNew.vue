@@ -1,14 +1,17 @@
 <template>
-    <div v-if="isActive"
-        :class="['min-h-screen', 'flex', 'flex-col', 'w-56', 'bg-white', this.$i18n.locale === 'ar' ? 'rounded-l-3xl' : 'rounded-r-3xl', 'overflow-hidden']">
+    <div v-if="sideBar"
+        :class="['h-full', 'flex', 'flex-col', 'w-56',
+         'bg-white', this.$i18n.locale === 'ar' ? 'rounded-l-3xl' : 'rounded-r-3xl',
+         'overflow-hidden','z-50','fixed',
+         'xl:z-0','xl:relative','xl:h-auto','2xl:z-0','2xl:relative','2xl:h-auto']">
         <div class="flex items-center justify-start">
             <img v-if="$i18n.locale === 'en'" src="../assets/images/logoEngPrimary.png" alt="brandLogo"
                 class="h-32 w-32 ml-4" />
             <img v-if="$i18n.locale === 'ar'" src="../assets/images/logoArbPrimary.png" alt="brandLogo"
                 class="h-32 w-32 mr-4" />
-            <!-- <button @click="toggleSidebar" class="text-gray-200 hover:text-gray-800">
+            <button @click="toggleSidebar" class="text-gray-200 hover:text-gray-800">
                 <Icon icon="line-md:close-circle-filled" width="1.5em" height="1.5em" />
-            </button> -->
+            </button>
         </div>
         <hr class="h-4">
         <div class="flex justify-center items-center">
@@ -95,7 +98,7 @@ export default {
     data() {
         return {
             time: '',
-
+            sideBar:false,
         };
     },
     props: {
@@ -109,9 +112,11 @@ export default {
         Icon
     },
     methods: {
+        toggleSidebar(){
+            this.sideBar=false
+        },
         updateTimeOfDay() {
             const currentHour = new Date().getHours();
-            console.log("CurrentHour", currentHour);
             if (currentHour >= 5 && currentHour < 12) {
                 this.time = this.$t('goodMorning');
             } else if (currentHour >= 12 && currentHour < 17) {
@@ -127,6 +132,9 @@ export default {
         '$i18n.locale'() {
             this.updateTimeOfDay();
         },
+        isActive(oldVal,newVal){
+            this.sideBar=!this.sideBar
+        }
 
     },
     mounted() {
