@@ -1,6 +1,6 @@
 import express from 'express';
 import { createSSRApp } from 'vue';
-import router from './router.js'; // Import default router
+import router from './src/router.js'; // Import default router
 import { renderToString } from 'vue/server-renderer';
 import { createServer } from 'vite';
 
