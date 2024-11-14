@@ -9,16 +9,6 @@ export const routes = [
     component: () => import('./views/LoginView.vue'), // Lazy loading
   },
   {
-    path: '/home',
-    name: 'home',
-    component: () => import('./views/HomeView.vue'), // Lazy loading
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('./views/AboutView.vue'), // Lazy loading
-  },
-  {
     path: '/forgot-password',
     name: 'forgotPassword',
     component: () => import('./views/ForgotPasswordView.vue'), // Lazy loading

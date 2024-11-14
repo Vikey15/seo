@@ -1,10 +1,10 @@
 <template>
-    <div class="min-h-screen flex flex-row bg-gray-100 ">
-        <SideMenuNew :is-active="sideMenu" />
+    <div class="min-h-screen flex flex-row bg-gray-50">
+        <SideMenuNew :is-active="sideMenu"/>
         <div :class="['flex-col','flex-grow']">
             <TopNav @sideMenu-visibility="handleUpdateBoolean" />
-            <div class="mx-3 mt-3 p-2 bg-white rounded-3xl">
-                <!-- <h1 class="text-3xl font-bold">Products</h1> -->
+            <div class="m-3">
+               
                 <div class="flex justify-start items-center">
                     <p class="text-center text-lg text-gray-600 dark:text-gray-400 m-1 font-extrabold">{{ time }}, Sam
                     </p>

@@ -1,8 +1,9 @@
 <template>
     <div v-if="sideBar"
-        :class="['h-full', 'flex', 'flex-col', 'w-56',
-         'bg-white', this.$i18n.locale === 'ar' ? 'rounded-l-3xl' : 'rounded-r-3xl',
+        :class="['min-h-screen', 'flex', 'flex-col', 'w-56',
+         'bg-white',
          'overflow-hidden','z-50','fixed',
+          'top-0', 'left-0',
          'xl:z-0','xl:relative','xl:h-auto','2xl:z-0','2xl:relative','2xl:h-auto']">
         <div class="flex items-center justify-start">
             <img v-if="$i18n.locale === 'en'" src="../assets/images/logoEngPrimary.png" alt="brandLogo"

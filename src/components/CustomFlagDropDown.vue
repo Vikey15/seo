@@ -8,9 +8,9 @@
     >
       <span class="flex items-center">
         {{ selectedLanguageLabel }}
-        <Icon :icon="selectedLanguage === 'en' ? 'twemoji:flag-us-outlying-islands' : 'twemoji:flag-qatar'" width="2em" height="2em" :class='this.selectedLanguage === "en"?"ml-2":"mr-2"' />
+        <Icon :icon="selectedLanguage === 'en' ? 'twemoji:flag-us-outlying-islands' : 'twemoji:flag-qatar'" width="2em" height="2em" :class='selectedLanguage === "en"?"ml-2":"mr-2"' />
       </span>
-      <svg :class='this.selectedLanguage === "en"?"ml-2 h-5 w-5 mt-1":"mr-2 h-5 w-5 mt-1"' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+      <svg :class='selectedLanguage === "en"?"ml-2 h-5 w-5 mt-1":"mr-2 h-5 w-5 mt-1"' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
       </svg>
     </button>
