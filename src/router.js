@@ -1,8 +1,11 @@
-import { createRouter, createMemoryHistory, createWebHashHistory } from 'vue-router';
+import {
+  createMemoryHistory,
+  createRouter as _createRouter,
+  createWebHistory,
+} from "vue-router";
 
-const isServer = typeof window === 'undefined';
 
-export const routes = [
+const routes = [
   {
     path: '/',
     name: 'login',
@@ -35,10 +38,10 @@ export const routes = [
   },
 ];
 
-const router = createRouter({
-  // Use createMemoryHistory for SSR, and createWebHistory for the browser
-  history: isServer ? createMemoryHistory() : createWebHashHistory(),
-  routes,
-});
-
-export default router;
+export const createRouter = () =>
+  _createRouter({
+    history: import.meta.env.SSR
+      ? createMemoryHistory("/")
+      : createWebHistory("/"),
+    routes,
+  });
